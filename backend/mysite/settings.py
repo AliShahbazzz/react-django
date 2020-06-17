@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'rtsf2lk+sw@ap$qv4ps&#&na6c1hp5+91nly(^1@lez4c#g#!)',
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -154,13 +154,13 @@ CORS_ORIGIN_WHITELIST = 'http://localhost:8000',
 STATIC_URL = '/static/'
 
 # Used for extra static files
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, "static"),
+# )
 
 # Used for main static files
 
-# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # SMTP ===================================================================================================================
 

@@ -26,7 +26,7 @@ class Form extends Component {
         e.preventDefault();
         let value = this.state.values;
         return (
-            axios.post('http://127.0.0.1:8000/contactform/contact/', {
+            axios.post('contactform/contact/', {
                 headers: {
                     'Accept': "application/json, text/plain, */*",
                     'Content-Type': "application/json;charset=utf-8"
