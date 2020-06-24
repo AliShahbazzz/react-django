@@ -13,4 +13,4 @@ def learn(PassengerClass,No_siblings,No_children,female,male) :
     model = RandomForestClassifier(n_estimators=100, max_depth=5, random_state=1)
     model.fit(X, y)
     predictions = model.predict(test)
-    return(predictions)
+    return(predictions[0])
