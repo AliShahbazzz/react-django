@@ -12,7 +12,7 @@ class MlConfig(AppConfig):
         data = [{"PassC": PassengerClass, "Sib": No_siblings,
                  "chi": No_children, "fem": female, "mal": male}]
         test = pd.DataFrame(data)
-        train_data = pd.read_csv("D:/shahbazz/shahbazz/backend/train.csv")
+        train_data = pd.read_csv("/home/shahbazz/app/react-django/backend/train.csv")
         y = train_data["Survived"]
 
         features = ["Pclass", "Sex", "SibSp", "Parch"]

@@ -3,9 +3,11 @@
 /backend/.vscode
 /backend/logs
 /backend/db.sqlite3
-_
-migrations
-__pycache__
+/backend/ml/migrations
+/backend/contactform/migrations
+/backend/ml/__pycache__
+/backend/contactform/__pycache__
+/backend/mysite/__pycache__
 # dependencies
 /frontend/node_modules
 /.pnp
