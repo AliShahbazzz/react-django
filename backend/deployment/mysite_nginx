@@ -3,7 +3,7 @@ upstream mysite_app_server {
  # to return a good HTTP response (in case the Unicorn master nukes a 
  # single worker for timing out). 
 
- server unix:/app/react-django/backend/run/gunicorn.sock fail_timeout=0; 
+ server unix:localhost:8000 fail_timeout=0; 
 } 
 
 server { 
@@ -13,15 +13,15 @@ server {
 
     client_max_body_size 4G; 
 
-    access_log /app/react-django/backend/logs/nginx-access.log; 
-    error_log /app/react-django/backend/logs/nginx-error.log; 
+    access_log /home/shahbazz/app/react-django/backend/logs/nginx-access.log; 
+    error_log /home/shahbazz/app/react-django/backend/logs/nginx-error.log; 
 
    location /static/ { 
-       alias   /app/react-django/backend/static/; 
+       alias   /home/shahbazz/app/react-django/backend/static/; 
    } 
 
    location /media/ { 
-        alias  /app/react-django/backend/media/; 
+        alias  /home/shahbazz/app/react-django/backend/media/; 
    } 
 
    location / { 
