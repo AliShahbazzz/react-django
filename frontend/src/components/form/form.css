@@ -1,0 +1,13 @@
+.form-main {
+    align-self: center;
+}
+
+.form-main input {
+    border: none;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.form-main button {
+    padding: 5px 10px;
+}

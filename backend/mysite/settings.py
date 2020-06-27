@@ -47,7 +47,9 @@ INSTALLED_APPS = [
 
     'rest_framework',
 
-    'contactform'
+    'contactform',
+
+    'ml',
 ]
 
 MIDDLEWARE = [
@@ -146,6 +148,7 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_WHITELIST = 'http://localhost:8000',
+
 
 
 # Static files (CSS, JavaScript, Images)
