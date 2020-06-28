@@ -1,4 +1,4 @@
-from rest_framework.generics import ListCreateAPIView
+from rest_framework.generics import CreateAPIView
 from .apps import MlConfig
 from rest_framework.response import Response
 from .models import Ml
@@ -7,7 +7,7 @@ from .serializer import MlSerializer
 # Create your views here.
 
 
-class MlView(ListCreateAPIView):
+class MlView(CreateAPIView):
     queryset = Ml.objects.all()
     serializer_class = MlSerializer
 

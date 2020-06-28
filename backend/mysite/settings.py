@@ -147,9 +147,9 @@ REST_FRAMEWORK = {
     ]
 }
 
-CORS_ORIGIN_WHITELIST = 'http://localhost:8000',
+CORS_ORIGIN_WHITELIST = 'http://localhost:3000','http://localhost:8000',
 
-
+CSRF_COOKIE_NAME = "csrftoken"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -157,13 +157,13 @@ CORS_ORIGIN_WHITELIST = 'http://localhost:8000',
 STATIC_URL = '/static/'
 
 # Used for extra static files
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, "static"),
-# )
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
 
 # Used for main static files
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+#STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # SMTP ===================================================================================================================
 

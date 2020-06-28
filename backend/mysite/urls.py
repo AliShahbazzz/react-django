@@ -25,4 +25,4 @@ urlpatterns = [
     path('contactform/', include('contactform.urls', namespace='contact')),
     path('ml/', include('ml.urls', namespace='ml')),
     path('', TemplateView.as_view(template_name="index.html")),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]

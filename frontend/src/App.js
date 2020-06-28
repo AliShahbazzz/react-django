@@ -11,7 +11,7 @@ function App() {
       {/*
       <Form />
       */}
-      <img src={logo} />
+      <img src={logo} alt="img" />
       <div className="powered">powered by</div>
       <p className="ml">Machine Learning</p>
     </div>

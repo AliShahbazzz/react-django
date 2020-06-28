@@ -45,7 +45,11 @@ class Form extends Component {
         e.preventDefault();
         let value = this.state.values;
         return (
-            axios.post('ml/learn/', {
+            axios.post('http://localhost:8000/ml/learn/', {
+                headers: {
+                    'Accept': "application/json, text/plain, */*",
+                    'Content-Type': "application/json;charset=utf-8"
+                },
                 PassengerClass: value.class,
                 No_siblings: value.siblings,
                 No_children: value.children,
@@ -67,7 +71,7 @@ class Form extends Component {
                         }
                     }
                 })
-                .catch(err => this.setState({ final: 'Error 404!' }))
+                .catch(err => this.setState({ final: 'Error 404!' }, console.log(err)))
         )
     }
     render() {
@@ -83,12 +87,11 @@ class Form extends Component {
                     <input type="number" name="siblings" value={this.state.siblings} onChange={(e) => this.updateVal('siblings', e)} />
                     </p><p>Number of Children:
                     <input type="number" name="children" value={this.state.children} onChange={(e) => this.updateVal('children', e)} />
-                    </p><p>Gender
+                    </p>Gender
                     <div onChange={(e) => this.updateGender(e)}>
-                            <input type="radio" name="gender" value="male" defaultChecked /><label>Male</label>
-                            <input type="radio" name="gender" value="female" /><label>Female</label>
-                        </div>
-                    </p>
+                        <input type="radio" name="gender" value="male" defaultChecked /><label>Male</label>
+                        <input type="radio" name="gender" value="female" /><label>Female</label>
+                    </div>
                     <p><button type="submit">Submit</button></p>
                 </form>
             </div>
