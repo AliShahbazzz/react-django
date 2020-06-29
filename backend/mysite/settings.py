@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'rtsf2lk+sw@ap$qv4ps&#&na6c1hp5+91nly(^1@lez4c#g#!)',
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -49,15 +49,17 @@ INSTALLED_APPS = [
 
     'contactform',
 
+    'machine',
+
     'ml',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -147,9 +149,10 @@ REST_FRAMEWORK = {
     ]
 }
 
-CORS_ORIGIN_WHITELIST = 'http://localhost:3000','http://localhost:8000',
-
-CSRF_COOKIE_NAME = "csrftoken"
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:8000",
+    "http://127.0.0.1:8000"
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -157,21 +160,21 @@ CSRF_COOKIE_NAME = "csrftoken"
 STATIC_URL = '/static/'
 
 # Used for extra static files
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, "static"),
+# )
 
 # Used for main static files
 
-#STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # SMTP ===================================================================================================================
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'youremial@gmail.com'
-EMAIL_HOST_PASSWORD = '*********'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'youremial@gmail.com'
+# EMAIL_HOST_PASSWORD = '*********'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
 
 # # SSL =====================================================================================================================
 # CORS_REPLACE_HTTPS_REFERER = True

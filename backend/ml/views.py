@@ -7,11 +7,11 @@ from .serializer import MlSerializer
 # Create your views here.
 
 
-class MlView(CreateAPIView):
+class Ml(CreateAPIView):
     queryset = Ml.objects.all()
     serializer_class = MlSerializer
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request):
         # mldata = MlSerializer(data=request.data)
         # if mldata.is_valid():
         SPassengerClass = request.data['PassengerClass']
@@ -27,9 +27,10 @@ class MlView(CreateAPIView):
         res = str(MlConfig.learn(PassengerClass,
                                  No_siblings, No_children, female, male))
 
-        # mldata.result = str(res)
-        mldata = Ml.objects.create(PassengerClass=PassengerClass, No_siblings=No_siblings,
-                                   No_children=No_children, female=female, male=male, result=res)
-        mldata.save()
+        mldata = MlSerializer(data=request.data)
+        if mldata.is_valid():
+            mldata.save(result=res)
+            return Response(
+                {'message': res})
         return Response(
-            {'message': res })
+            {'message': mldata.errors})

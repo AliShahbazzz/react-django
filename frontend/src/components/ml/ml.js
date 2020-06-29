@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class Form extends Component {
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+
+export default class Machine extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -45,11 +48,7 @@ class Form extends Component {
         e.preventDefault();
         let value = this.state.values;
         return (
-            axios.post('http://localhost:8000/ml/learn/', {
-                headers: {
-                    'Accept': "application/json, text/plain, */*",
-                    'Content-Type': "application/json;charset=utf-8"
-                },
+            axios.post('ml/learn/', {
                 PassengerClass: value.class,
                 No_siblings: value.siblings,
                 No_children: value.children,
@@ -98,5 +97,3 @@ class Form extends Component {
         );
     }
 }
-
-export default Form;

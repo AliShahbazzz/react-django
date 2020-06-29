@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import MlView
+from .views import Ml
 
 app_name = 'ml'
 
 urlpatterns = [
-    path('learn/', MlView.as_view(), name="ml")
+    path('learn/', Ml.as_view(), name="ml")
 ]

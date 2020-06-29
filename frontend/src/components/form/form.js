@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './form.css'
 import axios from 'axios';
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+axios.defaults.xsrfCookieName = "XCSRF-TOKEN";
 
 class Form extends Component {
     state = {

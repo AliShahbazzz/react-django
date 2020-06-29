@@ -1,16 +1,12 @@
 import React from 'react';
-//import Form from './components/form/form';
 import logo from './images/logo.png';
-import Ml from './components/ml/ml';
+import Machine from './components/ml/ml';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Ml />
-      {/*
-      <Form />
-      */}
+      <Machine />
       <img src={logo} alt="img" />
       <div className="powered">powered by</div>
       <p className="ml">Machine Learning</p>

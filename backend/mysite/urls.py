@@ -23,6 +23,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('contactform/', include('contactform.urls', namespace='contact')),
+    path('machine/', include('machine.urls', namespace='machine')),
     path('ml/', include('ml.urls', namespace='ml')),
     path('', TemplateView.as_view(template_name="index.html")),
 ]
