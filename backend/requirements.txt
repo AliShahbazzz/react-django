@@ -4,7 +4,7 @@ django-cors-headers==3.3.0
 django-mssql-backend==2.8.1
 django-sslserver==0.22
 django-webpack-loader==0.7.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 psycopg2==2.8.5
 pyodbc==4.0.30
 pytz==2020.1
